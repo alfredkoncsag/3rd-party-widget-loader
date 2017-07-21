@@ -7,13 +7,6 @@
   "author": {
     "name": "Shootitlive, http://shootitlive.com"
   },
-  "contributors": [
-    "Emil Stenqvist <emsten@gmail.com>"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shootitlive/widgetloader.git"
-  },
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.0",
