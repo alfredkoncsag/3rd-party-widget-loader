@@ -1,12 +1,9 @@
 {
-
   "name": "example-app",
   "title": "Example App for WidgeLoader",
   "version": "0.1.0",
   "homepage": "http://github.com/shootitlive.com/widgetloader",
-  "author": {
-    "name": "Shootitlive, http://shootitlive.com"
-  },
+  "author": "Shootitlive, http://shootitlive.com",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.0",
@@ -17,5 +14,21 @@
     "grunt-regarde": "~0.1.1",
     "grunt-shell": "~0.2.0",
     "grunt-contrib-copy": "~0.4.0"
+  },
+  "description": "This is a skeleton for creating an embedded Javascript widget using RequireJS, grunt and tightly controlled namespacing.",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfredkoncsag/3rdPartyWidgetLoader.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alfredkoncsag/3rdPartyWidgetLoader/issues"
   }
 }

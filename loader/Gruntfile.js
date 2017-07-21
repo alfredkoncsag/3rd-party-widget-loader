@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   var config = require('./js/config');
 
@@ -8,21 +8,33 @@ module.exports = function(grunt) {
     requirejs: {
       compile: {
         options: {
-          namespace : config.namespace,
-          baseUrl   : "./js",
-          name      : "main",
-          out       : "dist/main.js",
+          namespace: config.namespace,
+          baseUrl: "./js",
+          name: "main",
+          out: "dist/main.js",
           // We minify the whole thing in the end instead
-          optimize  : "none"
+          optimize: "none"
         }
       }
     },
 
     concat: {
       dist: {
-        src: [ 'js/config.js', 'dist/main.js' ],
+        src: ['js/config.js', 'dist/main.min.js'],
         dest: 'dist/widget.load.v1.default.js'
       },
+      debug: {
+        src: ['js/config.js', 'vendor/require.js', 'js/require.js', 'dist/main.js'],
+        dest: 'dist/widget.load.v1.default.js'
+      }
+    },
+
+    uglify: {
+      my_target: {
+        files: {
+          'dist/main.min.js': ['vendor/require.js', 'js/require.js', 'dist/main.js'],
+        }
+      }
     },
 
     clean: {
@@ -36,9 +48,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
 
-  grunt.registerTask('build', ['clean', 'requirejs', 'concat:dist']);
+  grunt.registerTask('build', ['clean', 'requirejs','uglify', 'concat:dist']);
 
 };
 
