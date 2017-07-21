@@ -84,15 +84,3 @@ The approach differs somewhat for each library - but most sane libraries
 have their exports at the top or bottom of the source, and shouldn't be
 too hard to figure out. Also there's a module for listing added globals
 in `app/js/list_globals.js`.
-
-# TODO
-- Try to find a generic and automated way of wrapping libraries
-- Make it easier to use this repository as a module, so one can pull
-upgrades without manual copying.
-- Convert `loader` to Grunt 0.4
-
-# Authors
-- [Emil Stenqvist](http://github.com/emilisto) at [Shootitlive AB](http://shootitlive.com)
-
-# Licensing
-This software is released under the [MIT license](http://mit-license.org).

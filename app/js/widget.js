@@ -1,6 +1,6 @@
-define([ 'jquery'], function( $ ) {
+define(['jquery'], function ($) {
 
-  var Widget = function(params) {
+  var Widget = function (params) {
 
 
 
