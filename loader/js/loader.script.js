@@ -5,12 +5,11 @@ define(['utils', 'namespace' ], function(utils, namespace) {
 
   // RE used to identify widgets, note that scripts must have the src
   //
-  //   //anything/widget.load(anything).js
-  //
+  // anything/widget.load(anything).js
   // Since this is how they are identified. The reason for not using a class
   // name, etc. is that emebd tags might be "mangled" by blog tools, e.g.
   // Tumblr.
-  //
+  
   var re = /.*widget\.load\.([^/]+\.)?js/;
 
   return function(loadOne) {

@@ -1,8 +1,17 @@
 <html>
-    <body>
-        <h1>Widget test</h1>
+<head>
+    <link rel="stylesheet" href="./widget-light.css">
+<style>
+    body{
+        background-color:azure;
+    }
+</style>
+</head>
+<body>
+    <h1>Widget test</h1>
+    
+    <ts-widget type="shop-items"></ts-widget>
 
-        <script src="/loader/dist/widget.load.v1.default.js?parameter=123&user=emilisto&base_url=http://localhost:9001/app" async></script>
-    </body>
+    <script src="/loader/dist/widget.load.v1.default.js?app_uuid=123&event_uuid=21321&base_url=http://localhost/widgetloader/app"async></script>
+</body>
 </html>
-

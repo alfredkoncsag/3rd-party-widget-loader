@@ -2,15 +2,14 @@
 // Config
 
 var QUERYSTRING_PREFIX = 'widget_',
-    defaultParameters = {
-      base_url: config.baseUrl
+  defaultParameters = {
+    base_url: config.baseUrl
+    // Default parameters go here
 
-      // Default parameters go here
+  };
 
-    };
-
-require([ 'utils', 'loader.div', 'loader.script' ], function(utils, loadDivEmbeds, loadScriptEmbeds) {
-
+require(['utils', 'loader.div', 'loader.script'], function (utils, loadDivEmbeds, loadScriptEmbeds) {
+   
   //
   // One can add silp params to the query string and they will be translated like:
   //
@@ -18,14 +17,13 @@ require([ 'utils', 'loader.div', 'loader.script' ], function(utils, loadDivEmbed
   //
   var paramsQueryString = {};
   var document_params = utils.parseQueryString(document.location) || {};
-  utils.each(document_params, function(val, key) {
-    if(key.indexOf(QUERYSTRING_PREFIX) >= 0) {
+  utils.each(document_params, function (val, key) {
+    if (key.indexOf(QUERYSTRING_PREFIX) >= 0) {
       key = key.slice(QUERYSTRING_PREFIX.length);
       paramsQueryString[key] = val;
     }
   });
-
-  var loadOne = function(paramsEmbed) {
+  var loadOne = function (paramsEmbed) {
 
     // Parameters are overriden in order (1 overrides 2, 2 overrides 3)
     //
@@ -36,7 +34,7 @@ require([ 'utils', 'loader.div', 'loader.script' ], function(utils, loadDivEmbed
 
     var parameters = utils.extend({}, defaultParameters, paramsEmbed, paramsQueryString);
 
-    if(parameters.base_url !== defaultParameters.base_url) {
+    if (parameters.base_url !== defaultParameters.base_url) {
 
       //
       // Export RequireJS in global namespace if we set a custom base_url,
@@ -50,24 +48,22 @@ require([ 'utils', 'loader.div', 'loader.script' ], function(utils, loadDivEmbed
       // only risk breaking the embedding site for ourselves.
       //
 
-      exports.define = namespace.define;
+     
       exports.require = namespace.require;
       exports.requirejs = namespace.requirejs;
+      exports.define = namespace.define;
 
     }
-
     // Setup RequireJS and load the widget
     namespace.require.config({ baseUrl: parameters.base_url + '/js' });
 
-    namespace.require([ 'app' ], function(App) {
+    namespace.require(['app'], function (App) {
       var app = new App(parameters);
     });
 
   };
-
   // Find all embeds
   loadScriptEmbeds(loadOne);
   loadDivEmbeds(loadOne);
-
 });
 

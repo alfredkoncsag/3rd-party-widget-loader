@@ -1,10 +1,11 @@
-# Widget Loader
+# Shop Widget
 
+## Widget Loader (loader/)
 This is a skeleton for creating an embedded Javascript widget using
 RequireJS, grunt and tightly controlled namespacing.
 
 The idea is that this repository is for building the loader file - but
-as a start, an example app is included as well.
+as a start, an app is included as well.
 
 # Getting started
 
@@ -19,9 +20,6 @@ use this with your own widget - just copy the skeleton code. This
 includes:
 
 - `Gruntfile.js` - a very normal grunt file for a RequireJS project
-- `vendor/` - monkeypatched AMD versions of `jQuery`, `underscore` and
-`backbone`. Note that shim doesn't do since it will sitll expose global
-variables.
 - `app/js/app.js` - bootstrap file, you prolly want to leave
 this pretty much untouched.
 - `app/js/widget.js` - this is where your own code comes in.
