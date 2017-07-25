@@ -82,3 +82,7 @@ The approach differs somewhat for each library - but most sane libraries
 have their exports at the top or bottom of the source, and shouldn't be
 too hard to figure out. Also there's a module for listing added globals
 in `app/js/list_globals.js`.
+
+#Todo:
+
+Loader script optimization using npm not vendor.
